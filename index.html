@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM_HACKED</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 5em;
+            margin-top: 50px;
+        }
+
+        .console {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .prompt {
+            display: inline-block;
+            color: #0f0;
+        }
+
+        .output {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SYSTEM_HACKED</h1>
+        <div class="console">
+            <p class="prompt">>> </p>
+            <div class="output"></div>
+        </div>
+    </div>
+    <script>
+        let boxes = [];
+
+        for (let i = 0; i < 10; i++) {
+          let box = {
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight
+          };
+          boxes.push(box);
+        }
+
+        for (let i = 0; i < boxes.length; i++) {
+          let box = boxes[i];
+          alert(`location ${i + 1} position: x=${box.x}, y=${box.y}`);
+        }
+        alert('location triangulated now pushing coordinates')
+        for (let i = 0; i < boxes.length; i++) {
+          let box = boxes[i];
+          alert(`sending ${i + 1} position: x=${box.x}, y=${box.y}`);
+        }
+
+        function fakeHackingLoop() {
+          let commands = [
+            "ping google.com",
+            "whois domain.com",
+            "netstat -an",
+            "nmap -sS localhost",
+            "sqlmap -u website.com",
+            "hacking",
+            "pinging network static"
+          ];
+
+          let commandIndex = 0;
+
+          setInterval(() => {
+            alert(commands[commandIndex]);
+
+            // Simulate typing effect by adding characters one by one
+            let currentCommand = commands[commandIndex];
+            for (let i = 0; i < currentCommand.length; i++) {
+              setTimeout(() => {
+                alert(currentCommand[i]);
+              }, i * 50); // Adjust delay to control typing speed
+            }
+
+            commandIndex = (commandIndex + 1) % commands.length;
+
+            // Add a slight delay between commands
+            setTimeout(() => {}, 1500); // Adjust delay to control the speed of the loop
+          }, 2000); // Adjust delay to control the speed of the loop
+        }
+
+        fakeHackingLoop();
+    </script>
+</body>
+</html>
